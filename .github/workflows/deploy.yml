@@ -13,8 +13,7 @@ on:
 # workflow는 여래가의 job으로 이루어질 수 있고
 # 하나의 job은 여러개의 step으로 이루어진다
 # 여러 Job은 기본적으로 병렬적으로 수행된다.
-# 하나의 Workflow는 1개 이상의 Job으로 구성된다.
-# 여러 Job은 기본적으로 병렬적으로 수행된다.
+
 jobs:
   # Job을 식별하기 위한 id
   My-Deploy-Job:
