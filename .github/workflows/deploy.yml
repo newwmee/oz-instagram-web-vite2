@@ -50,3 +50,5 @@ jobs:
         # distribution-id 배포 아이디
       - name: CloudFront 캐시 무효화 하기
         run: aws cloudfront create-invalidation --distribution-id E3U1F2WQV09PM0 --paths "/*"
+#기능 추가와 업데이트를 하더라도 aws에 알아서 자동으로 업데이트가 되게끔 세팅
+#실제 프로젝트 진행시 - 매번 기능 업데이트 시 commit을 찍을 때마다 aws에 자동으로 웹페이지가 바뀌게끔 세팅
