@@ -12,6 +12,16 @@ jobs:
     steps:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
-      # Repository에 제대로 업로드 되었는지 확인
-      - name: Repository 파일 출력하기
-        run: ls
+      # # Repository에 잘 다운받아졌는지 확인 -눈으로 확인 하는 것 중요
+      # - name: Repository 파일 출력하기
+      #   run: ls
+      # github에는 node.js를 깔지 않아도 이미 깔아져 있기때문에 인식함
+      #  |를 써주면 명령어 여러개 쓸 수 있음
+      - name: 빌드하기
+        run: npm run build
+
+      - name: Debugging
+        run: |
+          ls 
+          cd dist
+          ls
