@@ -8,7 +8,7 @@ on:
 # uses: actions/checkout@v4 깃허브의 라이브러리 gitghun marketplace에 저장되어있음
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
