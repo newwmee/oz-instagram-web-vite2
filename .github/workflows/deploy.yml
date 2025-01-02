@@ -17,6 +17,10 @@ jobs:
       #   run: ls
       # github에는 node.js를 깔지 않아도 이미 깔아져 있기때문에 인식함
       #  |를 써주면 명령어 여러개 쓸 수 있다
+      # 의존성 설치 안하면 프로그램이 깔리지 않기 때문에 빌드가 되질 않음
+      - name: 의존성 설치
+        run: npm i
+
       - name: 빌드하기
         run: npm run build
 
