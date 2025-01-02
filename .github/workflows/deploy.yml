@@ -13,8 +13,10 @@ jobs:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
       # # Repository에 잘 다운받아졌는지 확인 -눈으로 확인 하는 것 중요
+      # uses 라이브러리 체크
       # - name: Repository 파일 출력하기
       #   run: ls
+
       # github에는 node.js를 깔지 않아도 이미 깔아져 있기때문에 인식함
       #  |를 써주면 명령어 여러개 쓸 수 있다
       # 의존성 설치 안하면 프로그램이 깔리지 않기 때문에 빌드가 되질 않음
@@ -24,9 +26,20 @@ jobs:
       - name: 빌드하기
         run: npm run build
 
-      - name: Debugging
+      # - name: Debugging
+      #   run: |
+      #     ls
+      #     echo "----------------------"
+      #     cd dist
+      #     ls
+
+      - name: AWS Ressource에 접근할 수 있게 AWS 인증 설정
+        uses: aws-actions/configure-aws-credential@v4
+        with:
+          aws-region: ap-northeast-2
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+      - name: S3기존 파일들 전체 삭제
         run: |
-          ls 
-          echo "----------------------"
-          cd dist
-          ls
+          aws s3 rm --recursive s3://facebookprc-web-page
