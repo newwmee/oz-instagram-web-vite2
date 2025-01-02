@@ -48,5 +48,5 @@ jobs:
 
         #업로드만 하면 cloudfront에 반영이 안됨 그래서 캐시 무효화 해줘야함
         # distribution-id 배포 아이디
-      - name: CloudFront 캐시 무효화
+      - name: CloudFront 캐시 무효화 하기
         run: aws cloudfront create-invalidation --distribution-id E3U1F2WQV09PM0 --paths "/*"
