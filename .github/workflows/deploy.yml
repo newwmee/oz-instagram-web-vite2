@@ -31,7 +31,10 @@ jobs:
           echo "Morning"
           pwd
 
+      # 참고: https://docs.github.com/en/actions/learn-github-actions/variables
+      # echo $GITHUB_REPOSITORY   현재 레포지토라 이름
+      # echo $GITHUB_SHA 커밋 아이디
       - name: Gihub Actions 자체 저장되어 있는 변수 사용해 보기
         run: |
-          echo $GITHUB_REPOSITORY    
+          echo $GITHUB_REPOSITORY   
           echo $GITHUB_SHA
