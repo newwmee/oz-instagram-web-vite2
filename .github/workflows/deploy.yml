@@ -12,3 +12,6 @@ jobs:
     steps:
       - name: Github Repository 파일 불러오기
         uses: actions/checkout@v4
+      # Repository에 제대로 업로드 되었는지 확인
+      - name: Repository 파일 출력하기
+        run: ls
