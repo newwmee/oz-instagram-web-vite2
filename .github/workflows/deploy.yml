@@ -38,7 +38,7 @@ jobs:
         run: |
           echo $GITHUB_REPOSITORY   
           echo $GITHUB_SHA
-
+      # 민감한 값들을 따로 저장하는것 (보안적으로 감추고 싶을때) ${{}} 사용 action에는 별표로 뜸
       - name: Github Actions Secret 변수 사용하기2
         run: |
           echo ${{ secrets.MY_NAME }}
