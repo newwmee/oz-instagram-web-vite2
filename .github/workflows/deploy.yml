@@ -2,7 +2,7 @@ name: Deploy To S3 And Invalridate Cloudfront
 
 on:
   push:
-    branchs:
+    branches:
       - main
 
 # uses: actions/checkout@v4 깃허브의 라이브러리 gitghun marketplace에 저장되어있음
